@@ -22,10 +22,10 @@ Each app has different development and production webpack config files as differ
 
 See the common webpack config, where we configure the the Babel loader. A loader is used to tell webpack to process some different files as we start to import them into our project. Babel is a loader that processes code from older versions of ES into ES5 that can be easily executed in a typical browser.
 
-See the bootsrap file on how we call the Mount function to startup the code:
-``
+Logic for invoking Mount function to startup the code:
+```
 If we are in development and running the app in isolation, call mount immediately.
-else we are running through a container, so export the mount function for container app.
+Else we are running through a container, so export the mount function for container app.
 ```
 
 **Naming of remotes inside ModuleFederationPlugin**:
