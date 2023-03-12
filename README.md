@@ -29,7 +29,7 @@ Else we are running through a container, so export the mount function for contai
 ```
 
 **Naming of remotes inside ModuleFederationPlugin**:
-Note in webpack dev config of container, the marketing word just before @<market app url> should match with the name: 'marketing' inside ModModuleFederationPlugin of webpack dev config of the Marketing app. And the marketing key before colon (webpack dev config of container) is what we will import inside code of container app.
+Note in webpack dev config of container, the marketing word just before @\<market app url\> should match with the name: 'marketing' inside ModModuleFederationPlugin of webpack dev config of the Marketing app. And the marketing key before colon (webpack dev config of container) is what we will import inside code of container app.
 ```
   new ModuleFederationPlugin({
       name: 'container',
