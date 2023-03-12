@@ -45,7 +45,9 @@ Git pipeline can be configured to build the app using webpack, and push the outp
 **Routing**:
 
 Notice how the routes in container app  point to remote application, while the routes in the 
-remote app (Marketing app) points to components inside it. Check App.js in both modules for the same. To maintain browser history, see the use of <BrowserRouter> which sets up routing plus creates browser history object in the container app. In Marketing app's app.js, we replace <BrowserRouter> with simple <Router> which does not create any history object. This now allows us to pass in our own history object. In bootsrap.js, we have code that takes the history object passed on from the container app and pass it down to this <Router> tag. If you are running the remote app as standalone in dev env, then we create a new MemoryHistory obejct, and pass it down instead. The communication happens between container and Marketing app using callbacks. Notice the onNavigate callback method in bootstrap.js.
+remote app (Marketing app) points to components inside it. Check App.js in both modules for the same. 
+
+But what about browser history as you migrate between remote and cotnainer app routes on the browser? To maintain browser history, see the use of \<BrowserRouter\> which sets up routing plus creates browser history object in the container app. In Marketing app's app.js, we replace \<BrowserRouter\> with simple \<Router\> which does not create any history object. This now allows us to pass in our own history object. In bootsrap.js, we have code that takes the history object passed on from the container app and pass it down to this \<Router\> tag. If you are running the remote app as standalone in dev env, then we create a new MemoryHistory obejct, and pass it down instead. The communication happens between container and Marketing app using callbacks. Notice the onNavigate callback method in bootstrap.js.
 
 Only because of above setup, the routing in this poc works fine. ie, open localhost:8080 and click on pricing, the pricing app opens and the route in browser gets updated. Also, when you directly hit localhost:8080/pricing, the pricing page opens fine.
 
